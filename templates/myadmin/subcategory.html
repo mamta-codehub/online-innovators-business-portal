@@ -1,0 +1,57 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+
+          <div class="row">
+            
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">All Subcategories</h4>
+                  <p class="card-description">
+                    All Subcategories <code></code>
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <!-- <th>Category</th> -->
+                          <th>Subcategory</th>
+                          <th>Category</th>
+                          <th>Image</th>
+                          <th>Delete</th>
+                          <th>Edit</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        
+                        {% for row in result %}
+                        <tr>
+                          <td>{{row.id}}</td>
+                          <!-- <td>{{row.category}}</td> -->
+                          <td>{{row.subcategoryname}}</td>
+                          <td>{{row.category}}</td>
+                          <td><img src="/media/upload/{{row.file_name}}"></td>
+                          <td><a href="/myadmin/subcategory_delete/{{row.id}}">delete</a></td>
+                          <td><a href="/myadmin/subcategory_edit/{{row.id}}">edit</td>
+                        </tr>
+                        {% endfor %}
+
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+           
+            
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        
+        <!-- partial -->
+      </div>
+{% endblock %}

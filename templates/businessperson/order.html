@@ -1,0 +1,61 @@
+{% extends 'businessperson/common2/layout2.html' %}
+{% load static %}
+{% block content %}
+<div id="banner-area">
+    <img src="{% static 'businessperson/images/banner/banner2.jpg' %}" alt ="" />
+    <div class="parallax-overlay"></div>
+      <!-- Subpage title start -->
+      <div class="banner-title-content">
+            <div class="text-center">
+              <h2>Order</h2>
+              <ul class="breadcrumb">
+                  <li>Home</li>
+                  <li><a href="#">Order</a></li>
+                </ul>
+              </div>
+            </div><!-- Subpage title end -->
+  </div>
+  <section id="main-container">
+    <div class="container">
+      
+      <div class="row">
+        <!-- Map start here -->
+        <div id="map-wrapper">
+          
+        </div><!--/ Map end here -->  
+
+      </div><!-- Content row  end -->
+
+      <div class="gap-40"></div>
+
+
+    
+<table style="width: 100%;">
+  <thead>
+    <tr>
+      <th style="background-color: #007bff;color: white;">Order ID</th>
+      <th style="background-color: #007bff;color: white;">Customer Name</th>
+      <th style="background-color: #007bff;color: white;">Order Date</th>
+      <th style="background-color: #007bff;color: white;">Total Amount</th>
+      <th style="background-color: #007bff;color: white;">Status</th>
+      <th style="background-color: #007bff;color: white;">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for o in orders %}
+                        <tr>
+                          <td>{{o.id}}</td>
+                          <td>{{o.idea.title}}</td>
+                          <td>{{o.profile_id}}</td>
+                          <td>{{o.innovator_id}}</td>
+                          <td>{{o.date}}</td>
+                          <td>{{o.status}}</td>
+                        </tr>
+                        {% endfor %}
+    <!-- More rows can be added here -->
+  </tbody>
+</table>
+</div>
+</section>
+{% endblock %}
+

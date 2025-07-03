@@ -1,0 +1,185 @@
+{% extends 'innovators/common/layout.html' %}
+{% block content %}
+
+          <div class="row">
+           
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card" align="text-center">
+                <div class="card-body">
+                  <h4 class="card-title">Add Ideas</h4>
+                  <p class="card-description">
+                    Add Ideas
+                  </p>
+                  <form class="forms-sample" method="post" action="/innovators/idea_store" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                      <label for="exampleSelectGender" class="col-sm-3 col-form-label">Category</label>
+                      <div class="col-sm-9">
+                        <select class="form-control" id="category" name="category">
+                          <option value="">Select Category</option>
+                          {% for row in result %}
+                          <option value="{{row.id}}">{{row.categoryname}}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                      <label for="exampleSelectGender" class="col-sm-3 col-form-label">Subcategory</label>
+                      <div class="col-sm-9">
+                        <select class="form-control" id="subcategory" name="subcategory">
+                          <option value="">Select Subcategory</option>
+                          {% for sub_cat in subcategories %}
+                          <option value="{{sub_cat.id}}">{{sub_cat.subcategoryname}}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                    </div> 
+                  
+
+                    <!-- <div class="form-group row">
+                      <label for="exampleSelectGender" class="col-sm-3 col-form-label">Subcategory</label>
+                      <div class="col-sm-9">
+                        <select class="form-control" id="exampleSelectGender">
+                          <option value="">select Subcategory</option>
+                          <option value="1">Marketing</option>
+                          <option value="2">IT</option>
+                          <option value="3">Food</option>
+                        </select>
+                      </div>
+                    </div> -->
+
+                   <!--  <div class="form-group row">
+                      <label for="subcategory" class="col-sm-3 col-form-label">SubCategory</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="subcategory" name="subcategory">
+                      </div>
+                    </div> -->
+
+
+                    <div class="form-group row">
+                      <label for="title" class="col-sm-3 col-form-label">Title</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="title" name="title">
+                      </div>
+                    </div> 
+
+
+                  <div class="form-group row">
+                      <label for="smalldescription" class="col-sm-3 col-form-label">Small Description</label>
+                      <div class="col-sm-9">
+                        <textarea class="form-control" id="smalldescription" name="smalldescription" rows="4"></textarea>
+                      </div>
+                    </div> 
+
+
+                    
+
+
+                    <div class="form-group row">
+                      <label for="largedescription" class="col-sm-3 col-form-label">Large Description</label>
+                      <div class="col-sm-9">
+                        <textarea class="form-control" id="largedescription" name="largedescription" rows="8"></textarea>
+                      </div>
+                    </div>
+
+
+                  
+
+
+                    <div class="form-group row">
+                      <label for="setupprice" class="col-sm-3 col-form-label">Setup Price</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="setupprice" name="setupprice">
+                      </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                      <label for="setupduration" class="col-sm-3 col-form-label">Setup Duration</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="setupduration" name="setupduration">
+                      </div>
+                    </div>
+
+
+                    <!-- <div class="form-group row">
+                      <label for="exampleTextarea1" class="col-sm-3 col-form-label">Idea Details</label>
+                      <div class="col-sm-9">
+                         <input type="file" name="img[]" class="file-upload-default">
+                      <div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                        <span class="input-group-append">
+                          <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                        </span>
+                      </div>
+                      </div>
+                    </div> -->
+
+
+
+                    <!-- <div class="form-group row">
+                      <label for="file" class="col-sm-3 col-form-label">File</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="file" name="file">
+                      </div>
+                    </div> -->
+
+                    <div class="form-group row">
+                      <label for="f" class="col-sm-3 col-form-label">FileUpload</label>
+                      <div class="col-sm-9">
+                      <div class="input-group col-xs-12">
+                        <input type="file" class="form-control" name="f" id="f">
+                        <span class="input-group-append">
+                          <button type="submit" value="Upload" id="upload" name="upload">Upload</button>
+                        </span>
+                      </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label for="f1" class="col-sm-3 col-form-label">Profile Photo</label>
+                      <div class="col-sm-9">
+                      <div class="input-group col-xs-12">
+                        <input type="file" class="form-control" name="f1" id="f1">
+                        <span class="input-group-append">
+                          <button type="submit" value="Upload" id="upload" name="upload">Upload</button>
+                        </span>
+                      </div>
+                      </div>
+                    </div>
+
+
+
+                     <!-- <div class="form-group row">
+                      <label for="f" class="col-sm-3 col-form-label">FileUpload</label>
+                      <div class="col-sm-9">
+                      <div class="input-group col-xs-12">
+                        <input type="file" name="f" id="f">
+                        <span class="input-group-append">
+                          <button type="submit" value="Upload" id="upload" name="upload">Upload</button>
+                        </span>
+                      </div>
+                      </div>
+                    </div> -->
+
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+            
+           
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        
+{% endblock %}

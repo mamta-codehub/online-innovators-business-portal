@@ -1,0 +1,36 @@
+{% extends 'businessperson/common2/layout2.html' %}
+{% load static %}
+{% block content %}
+<div id="banner-area">
+        <img src="{% static 'businessperson/images/banner/banner2.jpg' %}" alt ="" />
+        <div class="parallax-overlay"></div>
+            <!-- Subpage title start -->
+            <div class="banner-title-content">
+                <div class="text-center">
+                    <h2>Payment Done</h2>
+                    <ul class="breadcrumb">
+                        <li>Home</li>
+                        <li><a href="#">Payment Done</a></li>
+                    </ul>
+                </div>
+            </div><!-- Subpage title end -->
+    </div>
+    <div class="container" style="max-width: 800px;margin: 50px auto;background-color: #fff;padding: 30px;border-radius: 10px;box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);text-align: center;">
+        <h1 style="color: #4CAF50;">Payment Successfully Received</h1>
+        <div class="success-message" style="font-size: 24px;margin-bottom: 30px;">
+            <p>Your payment has been successfully received.</p>
+        </div>
+        <div class="order-summary" style="border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;padding: 20px 0;margin: 30px 0;">
+            <h2 style="font-size: 20px;color: #333;margin-bottom: 10px;">Order Summary</h2>
+            <div class="order-details" style="margin-bottom: 20px;">
+                <p style="color: #666;margin: 5px 0;"><strong>Order Number:</strong> #123456</p>
+                <p style="color: #666;margin: 5px 0;"><strong>Date:</strong> April 1, 2024</p>
+                <p style="color: #666;margin: 5px 0;"><strong>Total Amount Paid:</strong> $100.00</p>
+            </div>
+        </div>
+        <button class="cta-button" style="background-color: #4CAF50;color: #fff;padding: 10px 20px;border: none;border-radius: 5px;font-size: 18px;cursor: pointer;transition: background-color 0.3s;">Continue Shopping</button><br/>
+        <div class="contact-info" style="font-size: 16px;color: #666;">
+            <p>If you have any questions, please contact customer support at <strong>support@example.com</strong>.</p>
+        </div>
+    </div>
+{% endblock %}

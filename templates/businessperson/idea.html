@@ -1,0 +1,83 @@
+{% extends 'businessperson/common2/layout2.html' %}
+{% load static %}
+{% block content %}
+<div id="banner-area">
+		<img src="{% static 'businessperson/images/banner/banner2.jpg' %}" alt ="" />
+		<div class="parallax-overlay"></div>
+			<!-- Subpage title start -->
+			<div class="banner-title-content">
+	        	<div class="text-center">
+		        	<h2>Ideas</h2>
+		        	<ul class="breadcrumb">
+			            <li>Home</li>
+			            <li><a href="#">Ideas</a></li>
+		          	</ul>
+	          	</div>
+          	</div><!-- Subpage title end -->
+	</div>
+	
+		
+<section id="main-container">
+	<div class="container">
+		<div class="row">
+			<form action="" method="post">
+				{% csrf_token %}
+				<div class="row" style="margin-left:75px">
+
+				<div class="col-md-5">
+					<div class="form-group row">
+                      <div class="col-sm-9">
+                        <select class="form-control" id="category" name="category">
+                          <option value="">Select Category</option>
+                          {% for c in categories %}
+                          <option value="{{c.id}}" {% if result.category_id == c.id %} selected {% endif %}>{{c.categoryname}}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                	</div>
+            	</div>
+                <div class="col-md-5">
+					<div class="form-group row">
+                      <div class="col-sm-9">
+                        <select class="form-control" id="subcategory" name="subcategory">
+                          
+                        </select>
+                      </div>
+                	</div>
+                </div> 
+                <input type="submit" value="Search" class="btn btn-primary">
+                
+            </div>
+               </form>
+		</div>
+		<div class="row">
+				<div class="col-lg-12 col-md-8 col-sm-12 col-xs-12">
+					{% for k in ideas2 %}
+						
+					<div class="about-author">
+						<div class="author-img pull-left">
+							<img src="/media/upload/{{k.file_name1}}">
+						</div>
+					<div class="author-info">
+						
+						<h3>{{k.user.username}}<span></span></h3>
+						<h4>{{k.title}}</h4>
+						<h5>{{k.smalldescription}}</h5>
+						<p>{{k.largedescription}}</p>
+						<p class="author-url"> <span><a href="/businessperson/idea_details/{{k.id}}">View Details</a></span></p>
+						
+					</div>
+					</div>
+					<br/>
+					<br/>
+					{% endfor %}
+				</div>
+				</div>
+				</div>
+
+</section>
+
+			
+
+
+{% endblock %}

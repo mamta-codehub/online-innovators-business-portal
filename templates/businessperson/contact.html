@@ -1,0 +1,76 @@
+{% extends 'businessperson/common2/layout2.html' %}
+{% load static %}
+{% block content %}
+<div id="banner-area">
+		<img src="{% static 'businessperson/images/banner/banner2.jpg' %}" alt ="" />
+		<div class="parallax-overlay"></div>
+			<!-- Subpage title start -->
+			<div class="banner-title-content">
+	        	<div class="text-center">
+		        	<h2>Contact Us</h2>
+		        	<ul class="breadcrumb">
+			            <li>Home</li>
+			            <li><a href="#"> Contact</a></li>
+		          	</ul>
+	          	</div>
+          	</div><!-- Subpage title end -->
+	</div>
+	<section id="main-container">
+		<div class="container">
+			
+			<div class="row">
+				<!-- Map start here -->
+				<div id="map-wrapper" class="no-padding">
+					
+				</div><!--/ Map end here -->	
+
+			</div><!-- Content row  end -->
+
+			<div class="gap-40"></div>
+<div class="row">
+	    		<div class="col-md-7">
+	    			<form id="" action="/businessperson/contact_store" method="post">
+	    				{% csrf_token %}
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Name</label>
+								<input class="form-control" name="name" id="name" placeholder="" type="text" required>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Email</label>
+									<input class="form-control" name="email" id="email" 
+									placeholder="" type="email" required>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label>Subject</label>
+									<textarea class="form-control" id="subject" name="subject" rows="4"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Message</label>
+							<textarea class="form-control" name="message" id="message" placeholder="" rows="10" required></textarea>
+						</div>
+						<div class="text-right"><br>
+							<button class="btn btn-primary solid blank" type="submit">Send Message</button> 
+						</div>
+					</form>
+	    		</div>
+	    		<div class="col-md-5">
+	    			<div class="contact-info">
+		    			
+		    			<h4>Online Innovators and Business POrtal</h4>
+			    		<p>Build a central platform where users can share their innovative business ideas.</p>
+			    		<br/>
+			    		<h3>Contact Details</h3>
+						<p><i class="fa fa-phone info"></i>9265204109</p>
+						<p><i class="fa fa-envelope-o info"></i>mamtachavda082@gmail.com</p>
+    				</div>
+	    		</div>
+	    	</div>
+{% endblock %}

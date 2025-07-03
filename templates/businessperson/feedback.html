@@ -1,0 +1,84 @@
+{% extends 'businessperson/common2/layout2.html' %}
+{% load static %}
+{% block content %}
+<div id="banner-area">
+    <img src="{% static 'businessperson/images/banner/banner2.jpg' %}" alt ="" />
+    <div class="parallax-overlay"></div>
+      <!-- Subpage title start -->
+      <div class="banner-title-content">
+            <div class="text-center">
+              <h2>Feedback</h2>
+              <ul class="breadcrumb">
+                  <li>Home</li>
+                  <li><a href="#">Feedback</a></li>
+                </ul>
+             
+              </div>
+            </div><!-- Subpage title end -->
+  </div>
+  <section id="main-container">
+    <div class="container">
+      
+      <div class="row">
+        <!-- Map start here -->
+        <div id="map-wrapper">
+          
+        </div><!--/ Map end here -->  
+
+      </div><!-- Content row  end -->
+
+      <div class="gap-40"></div>
+
+
+    
+ <div class="row">
+          <div class="col-md-7" style="height:380px;">
+            <form id="" method="post" action="/businessperson/feedback_store">
+              {% csrf_token %}
+
+
+
+               <div class="col-md-12">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">rating</label>
+                          <div class="col-sm-3">
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="rating" id="excellent" value="excellent">excellent
+                                
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-sm-3s">
+                            <div class="form-check">
+                              <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="rating" id="poor" value="poor">
+                                poor  
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                      <label for="exampleTextarea1" class="col-sm-3 col-form-label">comment</label>
+                      <div class="col-sm-9">
+                        <textarea class="form-control" id="comment" name="comment" rows="5"></textarea>
+                      </div>
+                    </div>
+            
+            
+
+                  
+            
+            <div class="text-right"><br>
+              <button class="btn btn-primary solid blank" type="submit" value="submit">Send Message</button> 
+            </div>
+          </form>
+          </div>
+          <div class="col-md-5">
+            <img src="{% static 'businessperson\images\feedback.jpeg' %}" alt ="" style="height: 380px;"/>
+          </div>
+        </div>
+
+{% endblock %}

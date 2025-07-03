@@ -1,0 +1,75 @@
+{% extends 'businessperson/common2/layout2.html' %}
+{% load static %}
+{% block content %}
+<div id="banner-area">
+		<img src="{% static 'businessperson/images/banner/banner2.jpg' %}" alt ="" />
+		<div class="parallax-overlay"></div>
+			<!-- Subpage title start -->
+			<div class="banner-title-content">
+	        	<div class="text-center">
+		        	<h2>Idea Details</h2>
+		        	<ul class="breadcrumb">
+			            <li>Home</li>
+			            <li>Ideas</a></li>
+			            <li><a href="#">Idea Details</a></li>
+		          	</ul>
+	          	</div>
+          	</div><!-- Subpage title end -->
+	</div>
+
+<!-- Blog details page start -->
+	<section id="main-container">
+		<div class="container">
+			<div class="row">
+				<!-- Blog start -->
+				<div class="col-lg-4 col-md-8 col-sm-12 col-xs-12">
+					
+					<!-- 1st post start -->
+					<div class="post">
+						<!-- post image start -->
+						<div class="post-image-wrapper" style="margin-top: 130px; border-radius: 20px;" >
+							<img src="/media/upload/{{ideas2.subcategory.file_name}}" class="img-responsive" style="height: 250px;width:350px; border-radius:10px; box-shadow:2px 2px 2px 2px lightgray;" alt="" />
+						</div><!-- post image end -->
+					<div class="post-header clearfix">
+						
+						<div class="post-meta">
+							<span class="post-meta-author ">Posted by<a href="#">&nbsp{{ideas2.user.username}}</a></span>
+						<div class="post-meta">
+							<div class="pull-right" >
+								<span class="post-meta-comments"><a href="#"><i class="fa fa-comment-o"></i> 11</a></span>
+								<span class="post-meta-hits"><a href="#"><i class="fa fa-heart-o"></i> 62</a></span>
+							</div>
+						</div><!-- post meta end -->
+						</div><!-- post heading end -->
+				</div>
+			</div>
+			
+		</div>
+				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+					<div class="post-body" style="border-radius:10px;padding-left: 10px; padding-right: 10px; background-color: white ; box-shadow: 2px 2px 2px 2px gray;">
+						<h2 class="post-title">
+							<h3>{{ideas2.category}}</h3>
+						</h2>
+						<h4>{{ideas2.title}}</h4>
+						<p>{{ideas2.smalldescription}}</p>
+						<p>{{ideas2.largedescription}}</p>
+						<h5 style="margin-top:20px;"><span>SetUp Price:&nbsp{{ideas2.setupprice}}</h5>
+						<h5>SetUp Duration:&nbsp{{ideas2.setupduration}}</span></h5>
+						<a href="/media/upload/{{ideas2.file_name}}" download style="font-size:20px;">Download Document&nbsp;<i class="fa fa-angle-double-right">&nbsp;</i></a>
+						<br/><br/>
+						<a href="/businessperson/add_to_cart/{{ideas2.id}}" class="btn btn-primary" style="">Add To Cart <i class="fas fa-cart-plus"></i><i class="fa fa-angle-double-right">&nbsp;</i></a><br/><br/><br/>
+					</div>
+				<br/>
+				<br/>
+				
+					
+
+				</div>
+			</div>
+		</div>
+		
+</section>
+	<!-- Blog details page end -->
+
+
+{% endblock %}

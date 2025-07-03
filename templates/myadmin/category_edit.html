@@ -1,0 +1,44 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+
+          <div class="row">
+           
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card" align="text-center">
+                <div class="card-body">
+                  <h4 class="card-title">Add Categories</h4>
+                  <p class="card-description">
+                    Add Categories
+                  </p>
+                  <!-- <center><img src="/media/upload/{{result.file_name}}" height="150" width="250"></center></br> -->
+                  <form class="forms-sample" method="post" action="/myadmin/category_update/{{result.id}}">
+                    {% csrf_token %}
+                   
+                    <div class="form-group row">
+                      <label for="exampleInputUsername2" class="col-sm-3 col-form-label">CategoryName</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="categoryname" name="categoryname" placeholder="Category Name" value={{result.categoryname}}>
+                      </div>
+                    </div>
+
+                    
+ 
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+            
+           
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        
+{% endblock %}

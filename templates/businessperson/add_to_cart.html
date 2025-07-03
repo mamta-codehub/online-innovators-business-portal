@@ -1,0 +1,67 @@
+{% extends 'businessperson/common2/layout2.html' %}
+{% load static %}
+{% block content %}
+<div id="banner-area">
+    <img src="{% static 'businessperson/images/banner/banner2.jpg' %}" alt ="" />
+    <div class="parallax-overlay"></div>
+      <!-- Subpage title start -->
+      <div class="banner-title-content">
+            <div class="text-center">
+              <h2>Cart</h2>
+              <ul class="breadcrumb">
+                  <li>Home</li>
+                  <li><a href="#">Cart</a></li>
+                </ul>
+              </div>
+            </div><!-- Subpage title end -->
+  </div>
+  <section id="main-container">
+    <div class="container">
+      
+      <div class="row">
+        <!-- Map start here -->
+        <div id="map-wrapper">
+          
+        </div><!--/ Map end here -->  
+
+      </div><!-- Content row  end -->
+
+      <div class="gap-40"></div>
+
+
+    <h3 align="center">My Cart</h3>
+<table style="width: 100%;">
+  <thead>
+    <tr>
+      <th style="background-color: #007bff;color: white;">ID</th>
+      <th style="background-color: #007bff;color: white;">Idea</th>
+      <th style="background-color: #007bff;color: white;">Price</th>
+      <th style="background-color: #007bff;color: white;">Duration</th>
+      <th style="background-color: #007bff;color: white;">Document</th>
+      <th style="background-color: #007bff;color: white;">Innovator</th>
+      <th style="background-color: #007bff;color: white;">Email</th>
+      <!-- <th style="background-color: #007bff;color: white;">Contact NO</th> -->
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{request.session.idea_id}}</td>
+      <td>{{request.session.idea_title}}</td>
+      <td>{{request.session.idea_price}}</td>
+      <td>{{request.session.idea_duration}}</td>
+      <td><a href="/media/upload/{{request.session.idea_document}}" download="">Download Document</a></td>
+      <td>{{request.session.inn_name}}</td>
+      <td>{{request.session.inn_email}}</td>
+      <!-- <td>{{request.session.inn_contact}}</td> -->
+      
+    </tr>
+    <!-- More rows can be added here -->
+  </tbody>
+</table>
+<br/>
+<a href="/businessperson/payment_process" class="btn btn-primary" style="float: right">Procced to Checkout </a><br/><br/><br/>
+</div>
+</section>
+{% endblock %}
+

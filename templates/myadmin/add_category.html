@@ -1,0 +1,45 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+
+          <div class="row">
+           
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card" align="text-center">
+                <div class="card-body">
+                  <h4 class="card-title">Add Categories</h4>
+                  <p class="card-description">
+                    Add Categories
+                  </p>
+                  <form class="forms-sample" method="post" action="/myadmin/category_store">
+                    {% csrf_token %}
+                   
+                    <div class="form-group row">
+                      <label for="categoryname" class="col-sm-3 col-form-label">CategoryName</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="categoryname" name="categoryname" placeholder="Category Name">
+                      </div>
+                    </div>
+
+                    
+                   
+
+
+                    <button type="submit" class="btn btn-primary mr-2" value="submit" name="submit" id="submit">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+            
+           
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        
+{% endblock %}

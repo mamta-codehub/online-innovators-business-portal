@@ -1,0 +1,84 @@
+{% extends 'innovators/common/layout.html' %}
+{% block content %}
+
+          <div class="row">
+            
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Ideas</h4>
+                  <p class="card-description">
+                    All Ideas <code></code>
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <tbody>
+                        <tr>
+                          <td>ID</td>
+                          <td>{{result.id}}</td>
+                        </tr>
+                        <tr>
+                          <td>Category</td>
+                          <td>{{result.category}}</td>
+                        </tr>
+                        <tr>
+                          <td>Subcategory</td>
+                          <td>{{result.subcategory}}</td>
+                        </tr>
+                        <tr>
+                          <td>Title</td>
+                          <td>{{result.title}}</td>
+                        </tr>
+                        <tr>
+                          <td>Small Description</td>
+                          <td>{{result.smalldescription}}</td>
+                        </tr>
+                        <tr>
+                          <td>Large Description</td>
+                          <td>{{result.largedescription}}</td>
+                        </tr>
+                        <tr>
+                          <td>Setup Price</td>
+                          <td>{{result.setupprice}}</td>
+                        </tr>
+                        <tr>
+                          <td>Setup Duration</td>
+                          <td>{{result.setupduration}}</td>
+                        </tr>
+                        <tr>
+                          <td>File</td>
+                          <td>
+                            <a href="/media/upload/{{result.file_name}}" download>Download Document</a>
+                           </td>
+                        </tr>
+                        <tr>
+                          <td>Profile Photo</td>
+                          <td><img src="/media/upload/{{result.file_name1}}"></td>
+                        </tr>
+                        <tr>
+                          <td>Delete</td>
+                          <td><a href="/innovators/idea_delete/{{result.id}}">delete</a></td>
+                        </tr>
+                        <tr>
+                          <td>Edit</td>
+                          <td><a href="/innovators/idea_edit/{{result.id}}">edit</td>
+                        </tr>
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+           
+            
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        
+        <!-- partial -->
+      </div>
+{% endblock %}
